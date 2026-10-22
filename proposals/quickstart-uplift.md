@@ -24,11 +24,13 @@
 
 ## **Abstract**
 
-[CN QuickStart](https://github.com/digital-asset/cn-quickstart) is a trusted, strong onboarding resource that today lags behind current Canton development practices, standards, and tools. **Moonsong Labs and Digital Asset propose uplifting QuickStart** ("QuickStart Uplift") to become an exemplar implementation of best practices for building a dApp:
+[CN QuickStart](https://github.com/digital-asset/cn-quickstart) is a trusted, strong onboarding resource that today lags behind current Canton development practices, standards, and tools. In the [Q1 2026 developer survey tooling report](https://docs.google.com/document/d/1Bojx0Bep9qZiuo8e8cVdOWzeoZDBs1lNYOQsdOPQow4/edit?usp=sharing), QuickStart had the highest regular use of any tool surveyed (56%) and the fewest respondents unaware of it (5%), yet 25% had tried it but found it missing features.
+
+Moonsong Labs and Digital Asset propose uplifting QuickStart ("QuickStart Uplift") to become an exemplar implementation of best practices for building a dApp:
 
 1. **Current stack and standards:** Upgrade QuickStart to the latest Splice release, Token Standard V2, app rewards, contract keys, a new React frontend, and a new TypeScript backend to support planned development. 
 2. **External signing, browser wallet, and `dpm quickstart`:** The backend signs through the Wallet SDK, then the App User signs with the browser wallet extension through the dApp SDK, completing the CIP-0103 split between wallet, dApp, and backend. QuickStart ships as a `dpm` component, following current best practices and replacing Makefile commands.
-3. **Documentation, education, validation, maintenance & adoption:** Validate the updated QuickStart through testing by 10 external developers from at least 3 different organizations. Educate the Canton ecosystem on the upgraded QuickStart by publishing documentation and videos, and hosting a webinar on Canton ecosystem first steps using the QuickStart. Deliver a “Gaps & Opportunities” report on the ecosystem components QuickStart integrates. Update 22 sections in [Canton Network docs](https://github.com/canton-network/cf-docs) directly referencing QuickStart, covering approximately 120 pages.
+3. **Documentation, education, validation, maintenance & adoption:** Validate the updated QuickStart through testing by 10 developers from external organizations. Educate the Canton ecosystem on the upgraded QuickStart by publishing documentation and videos, and hosting a webinar on Canton ecosystem first steps using the QuickStart. Deliver a “Gaps & Opportunities” report on the ecosystem components QuickStart integrates. Update 22 sections in [Canton Network docs](https://github.com/canton-network/cf-docs) directly referencing QuickStart, covering approximately 120 pages.
 
 The project duration is 10.5 months, with a total funding request of 12,950,000 CC. Throughout the project, we will document new features, maintain and update the Splice and Daml versions, and keep QuickStart aligned with the latest releases. 
 
@@ -42,7 +44,7 @@ Update CN QuickStart to serve as the exemplar implementation for building a dApp
 
 | **Area** | **Today** | **After the Quickstart Uplift** |
 | --- | --- | --- |
-| Splice | 0.6.11, while DevNet runs 0.8.4 | Updated to the latest version running in DevNet at the time of the last milestone delivery |
+| Splice | 0.6.11, while DevNet runs 0.9 | Updated to the latest version running in DevNet at the time of the last milestone delivery |
 | Token standard | V1 | V2 (CIP-0112) |
 | App rewards | Not used | Traffic-Based App Rewards (CIP-0104) |
 | Contract keys | Not used | Keys being used on daml templates. |
@@ -243,13 +245,21 @@ Upon release of milestones, the implementing entities will collaborate with the 
 
 ## **Motivation**
 
-Updating [cn-quickstart](https://github.com/digital-asset/cn-quickstart) directly addresses [RFP 15](https://github.com/canton-foundation/canton-dev-fund/blob/d03ee272d11e1ca9106ef9696fba0ffe00acaa9b/2026-2028-strategic-roadmap.md?plain=1#L185) by providing current, practical, high-quality guidance that helps developers move from their first local run to a standards-aligned Canton application using available ecosystem components. Milestone 2 also serves [RFP 14](https://github.com/canton-foundation/canton-dev-fund/blob/d03ee272d11e1ca9106ef9696fba0ffe00acaa9b/2026-2028-strategic-roadmap.md?plain=1#L177) by turning signing flows, external party onboarding, and app-to-wallet interactions into working reference code built on the Wallet SDK and dApp SDK. It serves [RFP 19](https://github.com/canton-foundation/canton-dev-fund/blob/d03ee272d11e1ca9106ef9696fba0ffe00acaa9b/2026-2028-strategic-roadmap.md?plain=1#L207) by packaging QuickStart as a reusable `dpm` component.
-
 QuickStart is a strong entry point for new Canton developers. It provides a reference implementation of best practices, an introduction to the ecosystem, and a demonstration of Canton’s tools working together. Today, it lacks the newest standards & tools: it uses an outdated Splice release and validator-based signing, relies on Token Standard V1, and doesn't showcase newer developments such as traffic-based app rewards and browser wallet integration.
 
 This gap costs teams time: developers learn patterns they later need to replace and encounter obstacles in their first steps. As a result, it takes longer to build a production-ready application and to onboard to the ecosystem.
 
-The uplift has three objectives that align with RFP 15:
+### Why keeping QuickStart current matters
+
+The [Q1 2026 developer survey tooling report](https://docs.google.com/document/d/1Bojx0Bep9qZiuo8e8cVdOWzeoZDBs1lNYOQsdOPQow4/edit?usp=sharing), the [Q1 Baseline Canton Developer Survey](https://docs.google.com/document/d/1igjlK1La2w1AxABr93xtya0_V6Aa_UUS2t0KG5sZ33g/edit?usp=sharing), and the [Canton Foundation Q2 2026 DevRel Survey](https://docs.google.com/document/d/1_2LaIJiYo3-6NHM1H1HqvTP1NFlhCH6Czr2yjV2Q_3k/edit?usp=sharing) show how developers use QuickStart today and what they expect from an exemplar app:
+
+- **Current use.** QuickStart was the most-used tool in the Q1 tooling report (56% regular use). The Q2 survey reports regular use falling from 55% to 31%.
+- **Gaps for developers who tried it.** In the Q1 tooling report, 25% of respondents had tried QuickStart but found it missing features. One developer in the Q1 survey said the QuickStart template “makes a lot of assumptions and has a lot of pre-configured users which makes understanding difficult,” and asked for an application where the onboarding and party association flow is clear.
+- **Demand for an up-to-date exemplar app.** In the Q2 survey, Featured App Builders asked for a production-ready wallet-to-dApp starter kit covering PartyId provisioning and the prepare → sign → execute flow. Independent and community builders asked for end-to-end sample projects comparable to Ethereum’s ecosystem, and for step-by-step onboarding tutorials, especially for wallet integration. Milestone 2 delivers this flow on the Wallet SDK and dApp SDK, and Milestone 3 adds walkthrough video tutorials.
+
+### Alignment with ecosystem goals
+
+Updating [cn-quickstart](https://github.com/digital-asset/cn-quickstart) directly addresses [RFP 15](https://github.com/canton-foundation/canton-dev-fund/blob/d03ee272d11e1ca9106ef9696fba0ffe00acaa9b/2026-2028-strategic-roadmap.md?plain=1#L185) by providing current, practical, high-quality guidance that helps developers move from their first local run to a standards-aligned Canton application using available ecosystem components. The uplift has three objectives that align with RFP 15:
 
 1. Reduce the time new teams need to build on Canton by shipping a current sample application and onboarding path they can run from a clean start.
 2. Publish reusable public materials, including updated quickstart guides, a reference architecture, and documentation in the unified Canton docs, that show how application developers design, build, and test against current standards.
