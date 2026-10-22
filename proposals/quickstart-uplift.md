@@ -44,7 +44,7 @@ Update CN QuickStart to serve as the exemplar implementation for building a dApp
 
 | **Area** | **Today** | **After the Quickstart Uplift** |
 | --- | --- | --- |
-| Splice | 0.6.11, while DevNet runs 0.9 | Updated to the latest version running in DevNet at the time of the last milestone delivery |
+| Splice | 0.6.11, while DevNet runs 0.9.3 | Updated to the latest version running in DevNet at the time of the last milestone delivery |
 | Token standard | V1 | V2 (CIP-0112) |
 | App rewards | Not used | Traffic-Based App Rewards (CIP-0104) |
 | Contract keys | Not used | Keys being used on daml templates. |
@@ -97,7 +97,7 @@ Quickstart Uplift milestones depend on integrating a series of components into t
 
 | Component | **Milestone** | Status | Risk | **Definition** |
 | --- | --- | --- | --- | --- |
-| [Splice](https://github.com/canton-network/splice) and Daml SDK | M1 | QuickStart pins Splice 0.6.11, while DevNet runs 0.9. [`sync-network.sh`](https://github.com/digital-asset/cn-quickstart/blob/main/quickstart/sync-network.sh) can no longer read the network version endpoint. | None | The target version will be based on latest DevNet deployed version as the Milestone completion date.  |
+| [Splice](https://github.com/canton-network/splice) and Daml SDK | M1 | QuickStart pins Splice 0.6.11, while DevNet runs 0.9.3. [`sync-network.sh`](https://github.com/digital-asset/cn-quickstart/blob/main/quickstart/sync-network.sh) can no longer read the network version endpoint. | None | The target version will be based on latest DevNet deployed version as the Milestone completion date.  |
 | [Token Standard V2 (CIP-0112)](https://github.com/canton-foundation/cips/blob/main/cip-0112/cip-0112.md) | M1 | QuickStart's licensing contracts still use V1. | None | No blockers to be implemented. |
 | [Traffic-Based App Rewards (CIP-0104)](https://github.com/canton-foundation/cips/blob/main/cip-0104/cip-0104.md) | M1 | The packages are on the ledger, but QuickStart doesn't use them. | None | No blockers to be implemented. |
 | [`dpm`](https://github.com/digital-asset/dpm) | M1, M2 | v3.5.2 already builds and tests QuickStart's Daml. Makefile wrappers remain. | None | No blockers to be implemented. |
