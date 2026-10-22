@@ -30,7 +30,7 @@ Moonsong Labs and Digital Asset propose uplifting QuickStart ("QuickStart Uplift
 
 1. **Current stack and standards:** Upgrade QuickStart to the latest Splice release, Token Standard V2, app rewards, contract keys, a new React frontend, and a new TypeScript backend to support planned development. 
 2. **External signing, browser wallet, and `dpm quickstart`:** The backend signs through the Wallet SDK, then the App User signs with the browser wallet extension through the dApp SDK, completing the CIP-0103 split between wallet, dApp, and backend. QuickStart ships as a `dpm` component, following current best practices and replacing Makefile commands.
-3. **Documentation, education, validation, maintenance & adoption:** Validate the updated QuickStart through testing by 10 developers from external organizations. Educate the Canton ecosystem on the upgraded QuickStart by publishing documentation and videos, and hosting a webinar on Canton ecosystem first steps using the QuickStart. Deliver a “Gaps & Opportunities” report on the ecosystem components QuickStart integrates. Update 22 sections in [Canton Network docs](https://github.com/canton-network/cf-docs) directly referencing QuickStart, covering approximately 120 pages.
+3. **Documentation, education, validation, maintenance & adoption:** Validate the updated QuickStart through testing by developers from at least 10 external organizations. Educate the Canton ecosystem on the upgraded QuickStart by publishing documentation and videos, and hosting a webinar on Canton ecosystem first steps using the QuickStart. Deliver a “Gaps & Opportunities” report on the ecosystem components QuickStart integrates. Update 22 sections in [Canton Network docs](https://github.com/canton-network/cf-docs) directly referencing QuickStart, covering approximately 120 pages.
 
 The project duration is 10.5 months, with a total funding request of 12,950,000 CC. Throughout the project, we will document new features, maintain and update the Splice and Daml versions, and keep QuickStart aligned with the latest releases. 
 
@@ -73,7 +73,7 @@ QuickStart is an example software licensing dApp between an App Provider and an 
 
 The current QuickStart teaches Canton fundamentals well, but it runs on old versions and doesn't yet cover several newer ecosystem standards and tools:
 
-- It pins Splice 0.6.11, two minor lines behind DevNet, and [`sync-network.sh`](https://github.com/digital-asset/cn-quickstart/blob/main/quickstart/sync-network.sh) can no longer read the network version endpoint.
+- It pins Splice 0.6.11, three minor lines behind DevNet, and [`sync-network.sh`](https://github.com/digital-asset/cn-quickstart/blob/main/quickstart/sync-network.sh) can no longer read the network version endpoint.
 - Payments use Token Standard V1, and the app is not involved in app rewards.
 - The validator signs for both parties. External signing exists only as a [guide](https://github.com/digital-asset/cn-quickstart/blob/main/sdk/docs/sharable/sdk/quickstart/operate/how-to-onboard-external-parties-in-quickstart.rst) using curl and OpenSSL commands.
 - The App User approves payments in the Splice wallet UI rather than through a CIP-0103 wallet.
@@ -97,7 +97,7 @@ Quickstart Uplift milestones depend on integrating a series of components into t
 
 | Component | **Milestone** | Status | Risk | **Definition** |
 | --- | --- | --- | --- | --- |
-| [Splice](https://github.com/canton-network/splice) and Daml SDK | M1 | QuickStart pins Splice 0.6.11, while DevNet runs 0.8.4. [`sync-network.sh`](https://github.com/digital-asset/cn-quickstart/blob/main/quickstart/sync-network.sh) can no longer read the network version endpoint. | None | The target version will be based on latest DevNet deployed version as the Milestone completion date.  |
+| [Splice](https://github.com/canton-network/splice) and Daml SDK | M1 | QuickStart pins Splice 0.6.11, while DevNet runs 0.9. [`sync-network.sh`](https://github.com/digital-asset/cn-quickstart/blob/main/quickstart/sync-network.sh) can no longer read the network version endpoint. | None | The target version will be based on latest DevNet deployed version as the Milestone completion date.  |
 | [Token Standard V2 (CIP-0112)](https://github.com/canton-foundation/cips/blob/main/cip-0112/cip-0112.md) | M1 | QuickStart's licensing contracts still use V1. | None | No blockers to be implemented. |
 | [Traffic-Based App Rewards (CIP-0104)](https://github.com/canton-foundation/cips/blob/main/cip-0104/cip-0104.md) | M1 | The packages are on the ledger, but QuickStart doesn't use them. | None | No blockers to be implemented. |
 | [`dpm`](https://github.com/digital-asset/dpm) | M1, M2 | v3.5.2 already builds and tests QuickStart's Daml. Makefile wrappers remain. | None | No blockers to be implemented. |
@@ -254,7 +254,7 @@ This gap costs teams time: developers learn patterns they later need to replace 
 The [Q1 2026 developer survey tooling report](https://docs.google.com/document/d/1Bojx0Bep9qZiuo8e8cVdOWzeoZDBs1lNYOQsdOPQow4/edit?usp=sharing), the [Q1 Baseline Canton Developer Survey](https://docs.google.com/document/d/1igjlK1La2w1AxABr93xtya0_V6Aa_UUS2t0KG5sZ33g/edit?usp=sharing), and the [Canton Foundation Q2 2026 DevRel Survey](https://docs.google.com/document/d/1_2LaIJiYo3-6NHM1H1HqvTP1NFlhCH6Czr2yjV2Q_3k/edit?usp=sharing) show how developers use QuickStart today and what they expect from an exemplar app:
 
 - **Current use.** QuickStart was the most-used tool in the Q1 tooling report (56% regular use). The Q2 survey reports regular use falling from 55% to 31%.
-- **Gaps for developers who tried it.** In the Q1 tooling report, 25% of respondents had tried QuickStart but found it missing features. One developer in the Q1 survey said the QuickStart template “makes a lot of assumptions and has a lot of pre-configured users which makes understanding difficult,” and asked for an application where the onboarding and party association flow is clear.
+- **Gaps for developers who tried it.** In the Q1 tooling report, 25% of respondents had tried QuickStart but found it missing features. One developer in the Q1 survey said the QuickStart template “makes a lot of assumptions and has a lot of pre-configured users which makes understanding difficult,” and asked for an application where the onboarding and party association flow is clear. Milestone 2 replaces this with external party onboarding and the prepare, sign, submit, and confirm flow in application code.
 - **Demand for an up-to-date exemplar app.** In the Q2 survey, Featured App Builders asked for a production-ready wallet-to-dApp starter kit covering PartyId provisioning and the prepare → sign → execute flow. Independent and community builders asked for end-to-end sample projects comparable to Ethereum’s ecosystem, and for step-by-step onboarding tutorials, especially for wallet integration. Milestone 2 delivers this flow on the Wallet SDK and dApp SDK, and Milestone 3 adds walkthrough video tutorials.
 
 ### Alignment with ecosystem goals
