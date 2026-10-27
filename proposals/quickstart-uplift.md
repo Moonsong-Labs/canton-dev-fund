@@ -145,11 +145,14 @@ QuickStart is a reference implementation, so these changes have no runtime impac
 
 ## **Milestones and Deliverables**
 
-Months count from the grant start date. Grant Start Date will be the day immediately following the date the grant is approved.
+Estimated delivery months count from the grant start date. Grant Start Date will be the day immediately following the date the grant is approved.
+
+Each milestone also has a committed delivery date. The committed date for Milestone 1 counts from the grant start date; for Milestones 2 and 3, it counts from the Committee’s acceptance of the previous milestone. A milestone is delivered on the date its completion evidence is submitted for Committee review. If a milestone is not delivered by its committed date and no amendment has been approved, that milestone’s funds are forfeited.
 
 ### **Milestone 1: Current stack and standards**
 
 - **Estimated Delivery:** 3.5 months from the start date (3.5 months)
+- **Committed Delivery:** 4.5 months from the start date
 - **Focus:** Move the whole stack to current versions and standards, with signing still inside the validator. Moonsong will coordinate closely with Digital Asset on architecture and best practices throughout Milestone 1.
 - **Deliverables:**
     - A design note covering the architecture across remaining milestones, incorporating Digital Asset feedback as it arrives.
@@ -165,6 +168,7 @@ Months count from the grant start date. Grant Start Date will be the day immedia
 ### **Milestone 2: External signing, browser wallet & `dpm quickstart`**
 
 - **Estimated Delivery:** 7 months from the start date (3.5 months)
+- **Committed Delivery:** 4.5 months from Committee acceptance of Milestone 1
 - **Focus:** Move signing out of the participant and into the application. Move the App User's keys into the browser wallet, which completes the custody model CIP-0103 describes. Package QuickStart as a `dpm` component.
 - **Deliverables:**
     - The backend holding both parties' keys through the Wallet SDK and signing externally.
@@ -182,12 +186,13 @@ Months count from the grant start date. Grant Start Date will be the day immedia
 ### **Milestone 3: Documentation, education, validation & adoption**
 
 - **Estimated Delivery:** 10.5 months from the start date (3.5 months)
+- **Committed Delivery:** 4.5 months from Committee acceptance of Milestone 2
 - **Focus:** Educate developers on the updated QuickStart and validate it with external teams. Fix issues identified through testing, and incorporate what we learn into the documentation and the “Gaps & Opportunities” Report. Moonsong Labs and Digital Asset will collaborate to make QuickStart the entry point for external organizations into the Canton ecosystem.
 - **Deliverables / Value Metrics:**
     - Documentation for all new features is ready and available for developers in the ecosystem. Currently, 22 sections of Canton's [docs repository](https://github.com/canton-network/cf-docs) directly reference QuickStart, covering approximately 120 pages.
     - Maintain QuickStart to keep up with the latest versions of Splice, Canton, and Daml SDK throughout Milestone 3.
-    - Developers from at least 10 organizations not affiliated with Moonsong Labs complete the QuickStart on LocalNet from start to finish and publicly confirm completion.
-    - 3 external organizations use QuickStart as a reference in developing or prototyping a Canton application, with written confirmation or repo evidence identifying which QuickStart implementation patterns were reused.
+    - Developers from at least 10 organizations that receive no funds from this grant (neither Moonsong Labs nor Digital Asset) complete the QuickStart on LocalNet from start to finish, verifiable by the Committee (e.g., public repositories, issues, or written public confirmations).
+    - 3 organizations that receive no funds from this grant use QuickStart as a reference in developing or prototyping a Canton application, identifying which QuickStart implementation patterns were reused, verifiable by the Committee (e.g., public repositories, issues, or written public confirmations).
     - Triage all M1/M2 issues identified through external testing, and resolve all issues that prevent completion of the documented QuickStart flow. Incorporate attendee feedback and recurring questions into the relevant documentation and the “Gaps & Opportunities” Report.
     - 3 walkthrough video tutorials that use QuickStart features to teach developers about Canton components and their applications in dApp development.
     - 1 webinar on the updated QuickStart to introduce new developers to the ecosystem.
@@ -204,7 +209,7 @@ The Tech & Ops Committee will evaluate completion based on:
 - Deliverables completed as specified for each milestone
 - Demonstrated functionality or operational readiness of the Quickstart.
 - Public verification of published documentation, videos, and webinar.
-- Public attestation of external developers and organizations about the Quickstart readiness and use.
+- Committee-verifiable confirmation from external developers and organizations about the Quickstart readiness and use.
 
 ---
 
